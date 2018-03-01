@@ -1,0 +1,99 @@
+<template class="task-template">
+  <section id="nozzle-section" class="section js-section u-category-fan">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          喷嘴直径设定
+        </h1>
+        <h3>本 <code>风机空气动力学性能测试系统</code> 根据 AMCA-210-07 Fig12 和 Fig15 设定，拥有进气测试模式和出气测试模式。</h3>
+
+        <p>请设定喷嘴的直径信息</p>
+
+        <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">喷嘴说明
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
+
+          <img src="assets/img/Fig4A-Nozzles.png" alt="" width="500px">
+
+          <ul>
+            <li>如图所示，喷嘴应具有由椭圆形和圆柱形部分组成的横截面。圆柱形部分被定义为喷嘴喉部。</li>
+            <li>椭圆部分的横截面是椭圆的四分之一，具有大轴D和小轴0.667D。应使用椭圆形的三半径近似，在法线方向的任何一点上，椭圆形不得超过椭圆形的1.5％。相邻的弧线以及最后一弧线应平稳地与喷嘴喉部相遇并混合。符合这些要求的推荐近似值在图4B中由Cermak，J.，于1992年6月16日向AMCA 210 / ASHRAE 51P委员会提交的备忘录报告中显示。</li>
+            <li>喷嘴喉部尺寸L应为0.6D +/- 0.005D（推荐）或0.5D +/- 0.005D。</li>
+            <li>喷嘴喉部应在椭圆短轴和喷嘴出口处进行测量（精度为0.001D）。在每个地方，相隔约45°的四个直径必须在平均值的+/-0.002D范围内。在咽喉入口处，平均值可以大于0.002D，但不小于喷嘴出口的平均值。</li>
+            <li>从喷嘴入口到喷嘴出口的流动方向上的喷嘴表面应该平滑地平直，使得直边可以在没有咔嗒声的情况下在表面上摆动。表面的宏观模式不得超过0.001D，峰 - 峰值。喷嘴出口的边缘应是正方形的，尖锐的，没有毛刺，缺口或圆角。</li>
+            <li>在室内，允许使用上述任何一种喷嘴类型。当排放物直接进入管道时，应使用带有喉头的喷嘴，并且喷嘴出口应带有凸缘。</li>
+            <li>带有喉头的喷嘴应有四个与图2A相符的抽头，相距90°+/- 2°。所有四个水龙头都应连接到一个压力计环。</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+
+      <div class="demo-wrapper">
+
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">喷嘴口径定义
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <form class="pure-form">
+            <fieldset>
+              <legend>喷嘴直径D(mm)定义</legend>
+              <label for="nozzle">
+                N1 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N2 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N3 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <br><br>
+              <label for="nozzle">
+                N4 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N5 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N6 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <br><br>
+              <label for="nozzle">
+                N7 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N8 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <label for="nozzle">
+                N9 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+              </label>
+              <br><br>
+              <button type="button" class="pure-button pure-button-primary" id="save-button">保存</button>
+              <button type="button" class="pure-button button-success" id="open-button">读取</button>
+              <span class="demo-response" id="config-file-status"></span>
+            </fieldset>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/fan/open-config-file')
+      require('./renderer-process/fan/save-config-file')
+    </script>
+
+  </section>
+</template>

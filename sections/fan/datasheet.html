@@ -1,0 +1,85 @@
+<template class="task-template">
+  <section id="datasheet-section" class="section js-section u-category-fan">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          风机参数设定
+        </h1>
+        <h3>此处设定风机手册参数，包括电压、电流、风量、静压等</h3>
+
+        <p>请设定喷嘴的直径信息</p>
+
+        <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">风机参数设定
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <form class="pure-form pure-form-aligned">
+              <fieldset>
+                  <div class="pure-control-group">
+                      <label for="name">风机型号 Type</label>
+                      <input id="name" type="text" placeholder="Username">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="password">输入功率 P(W)</label>
+                      <input id="password" type="password" placeholder="Password">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="email">风机转速 n(RPM)</label>
+                      <input id="email" type="email" placeholder="Email Address">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">输入电压 U(V)</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">输入电流 I(A)</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">风机静压 Ps(Pa)</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">风机流量 Q(m3/h)</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">风叶长度 Rf(m)</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-controls">
+                      <button type="submit" class="pure-button pure-button-primary">保存</button>
+                  </div>
+              </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+      require('./renderer-process/windows/create-window')
+      require('./renderer-process/windows/manage-window')
+      require('./renderer-process/windows/using-window-events')
+      require('./renderer-process/windows/frameless-window')
+    </script>
+
+  </section>
+</template>

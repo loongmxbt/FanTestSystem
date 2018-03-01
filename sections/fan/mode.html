@@ -1,0 +1,92 @@
+<template class="task-template">
+  <section id="mode-section" class="section js-section u-category-fan">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          测试模式设定
+        </h1>
+        <h3>本 <code>风机空气动力学性能测试系统</code> 根据 AMCA-210-07 Fig12 和 Fig15 设定，拥有进气测试模式和出气测试模式。</h3>
+
+        <p>请选择对应的测试模式，默认的测试模式为进气风机模式。</p>
+
+        <p>详细信息请查看 <a href="">《GB/T 1236-2017》</a> 和 <a href="#" id="open-pdf-file">《AMCA-210-07》</a> 标准规范。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">进气风扇测试模式
+          <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="new-window">设置为该模式</button>
+          </div>
+
+          <h5>进气风扇PQ特性测试 - 采用出气风室设定</h5>
+          <p>Fig12出气风室设置用于检测进气风机的PQ曲线</p>
+          <img src="assets/img/Fig12-Outlet-Chamber-Setup.png" alt="" width="500px">
+
+          <h5>注意事项</h5>
+          <ul>
+            <li>风扇入口处的虚线表示入口管道和一个等效管道直径，可用于进口管道模拟。不考虑管道摩擦。</li>
+            <li>风扇出口处的虚线表示均匀的风管，其长度为2至3当量，风扇出口面积的±1％范围内，且适合风扇出口的形状。这可以用来模拟出口管道。不考虑出口管道摩擦。</li>
+            <li>风扇可以在没有出风口的情况下进行测试，在这种情况下，风扇应安装在室的末端。</li>
+            <li>可变排气系统可以是辅助风扇或节流装置。</li>
+            <li>从最大喷嘴的出口面到下游沉降装置的距离应为最大喷嘴的最小直径的2.5倍。</li>
+            <li>对于旋转轴垂直于排放流量的风扇，尺寸J至少为风扇当量排放直径的1.0倍，对于旋转轴线与排放流量平行的风扇，风扇当量排放直径至少为2.0吨。警告！小尺寸J可能难以满足附录A中给出的标准。通过使尺寸J至少为0.35M，该条件得到改善，并且满足对于任何风扇的第5.3.1节中给出的标准。</li>
+            <li>温度td2可以被认为等于td5。</li>
+            <li>为了仅计算平面5的密度，可以认为Ps5等于Ps7。</li>
+          </ul>
+
+
+          <h5>计算公式</h5>
+          <img src="assets/img/Fig12-Outlet-Chamber-Equation.png" alt="" width="500px">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">排气风扇测试模式
+          <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="new-window">设置为该模式</button>
+          </div>
+
+          <h5>排气风扇PQ特性测试 - 采用进气风室设定</h5>
+          <p>Fig15进气风室设置用于检测排气风机的PQ曲线</p>
+          <img src="assets/img/Fig15-Inlet-Chamber-Setup.png" alt="" width="550px">
+
+          <h5>注意事项</h5>
+          <ul>
+            <li>风扇入口处的虚线表示入口管道和一个等效管道直径，可用于进口管道模拟。不考虑管道摩擦。</li>
+            <li>风扇出口处的虚线表示均匀的风管，其长度为2至3当量，风扇出口面积的±1％范围内，且适合风扇出口的形状。这可以用来模拟出口管道。不考虑出口管道摩擦。</li>
+            <li>可变电源系统可以是辅助风扇或节流装置。</li>
+            <li>从最大喷嘴出口面到下游沉降装置的距离应为最大喷嘴的最小直径的2.5倍。</li>
+            <li>为了仅计算平面5处的密度，可将Ps5视为等于（Pt8 +ΔP）。</li>
+            <li>代替总压力管，可以使用测压环来测量平面8处的静压。如果使用这种交替布置，并且所计算的平面8速度大于400fpm，则计算出的平面8速度压力应添加到测量的静态压力。</li>
+          </ul>
+
+
+          <h5>计算公式</h5>
+          <img src="assets/img/Fig15-Inlet-Chamber-Equation.png" alt="" width="550px">
+
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      require('./renderer-process/fan/open-pdf-file')
+      require('./renderer-process/windows/manage-window')
+      require('./renderer-process/windows/using-window-events')
+      require('./renderer-process/windows/frameless-window')
+    </script>
+
+  </section>
+</template>

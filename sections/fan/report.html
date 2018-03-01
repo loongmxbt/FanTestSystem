@@ -1,0 +1,79 @@
+<template class="task-template">
+  <section id="report-section" class="section js-section u-category-fan">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          测试报告导出
+        </h1>
+        <h3>本 <code>风机空气动力学性能测试系统</code> 根据 AMCA-210-07 Fig12 和 Fig15 设定，拥有进气测试模式和出气测试模式。</h3>
+
+        <p>请设定喷嘴的直径信息</p>
+
+        <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">测试报告导出
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <table class="pure-table pure-table-bordered">
+              <thead>
+                  <tr>
+                    <th>测试组</th>
+                    <th>开通喷嘴</th>
+                    <th>风机 Ps(Pa)</th>
+                    <th>喷嘴 ΔP(Pa)</th>
+                    <th>空气流速 V(m/s)</th>
+                    <th>总流量 Q(m3/h)</th>
+                  </tr>
+                </thead>
+
+              <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>N1</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>13</td>
+                    <td>400</td>
+                  </tr>
+
+                  <tr>
+                    <td>1</td>
+                    <td>N1</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>13</td>
+                    <td>400</td>
+                  </tr>
+
+                  <tr>
+                    <td>1</td>
+                    <td>N1</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>13</td>
+                    <td>400</td>
+                  </tr>
+              </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+      require('./renderer-process/windows/create-window')
+      require('./renderer-process/windows/manage-window')
+      require('./renderer-process/windows/using-window-events')
+      require('./renderer-process/windows/frameless-window')
+    </script>
+
+  </section>
+</template>

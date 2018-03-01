@@ -1,0 +1,103 @@
+<template class="task-template">
+  <section id="table-section" class="section js-section u-category-fan">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          测试数据表格
+        </h1>
+        <h3>本 <code>风机空气动力学性能测试系统</code> 根据 AMCA-210-07 Fig12 和 Fig15 设定，拥有进气测试模式和出气测试模式。</h3>
+
+        <p>请设定喷嘴的直径信息</p>
+
+        <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">数据表格
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux </div>
+        </button>
+        <div class="demo-box">
+          <table class="pure-table pure-table-bordered">
+            <thead>
+              <tr>
+                <th width="5%">#</th>
+                <th width="10%">喷嘴</th>
+                <th width="10%">风机静压 Ps(Pa)</th>
+                <th width="10%">喷嘴压差 ΔP(Pa)</th>
+                <th width="10%">空气流速 V(m/s)</th>
+                <th width="10%">总流量 Q(m<sup>3</sup>/h)</th>
+                <th width="10%">电压 U(V)</th>
+                <th width="10%">电流 I(A)</th>
+                <th width="10%">转速 n(RPM)</th>
+                <th width="15%">操作</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>N1</td>
+                <td>30</td>
+                <td>40</td>
+                <td>13</td>
+                <td>400</td>
+                <td>220</td>
+                <td>0.5</td>
+                <td>1000</td>
+                <td>
+                  <a href="">E</a>
+                  <a href="">X</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <br><br>
+          <form class="pure-form">
+
+            <fieldset>
+              <legend>测试组#1：喷嘴选择 </legend>
+
+              <label> N1 <input type="checkbox" value='1'></label>&nbsp;
+              <label> N2 <input type="checkbox" value='2'></label>&nbsp;
+              <label> N3 <input type="checkbox" value='3'></label>&nbsp;
+              <label> N4 <input type="checkbox" value='4'></label>&nbsp;
+              <label> N5 <input type="checkbox" value='5'></label>&nbsp;
+              <label> N6 <input type="checkbox" value='6'></label>&nbsp;
+              <label> N7 <input type="checkbox" value='7'></label>&nbsp;
+              <label> N8 <input type="checkbox" value='8'></label>&nbsp;
+              <label> N9 <input type="checkbox" value='9'></label>&nbsp;
+
+              <br><br>
+
+              <legend>测试组#1：风机静压和喷嘴压差 </legend>
+              <label for="name">Ps</label>
+              <input id="name" type="text" placeholder="Username">
+
+              <label for="password">ΔP</label>
+              <input id="password" type="text" placeholder="Password">
+
+              <button class="pure-button pure-button-primary">添加</button>
+            </fieldset>
+          </form>
+
+          
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+      require('./renderer-process/windows/create-window')
+      require('./renderer-process/windows/manage-window')
+      require('./renderer-process/windows/using-window-events')
+      require('./renderer-process/windows/frameless-window')
+    </script>
+
+  </section>
+</template>

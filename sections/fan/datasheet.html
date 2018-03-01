@@ -23,47 +23,49 @@
           <form class="pure-form pure-form-aligned">
               <fieldset>
                   <div class="pure-control-group">
-                      <label for="name">风机型号 Type</label>
-                      <input id="name" type="text" placeholder="Username">
+                      <label for="fantype">风机型号 Type</label>
+                      <input id="fantype" type="text" placeholder="Username">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="password">输入功率 P(W)</label>
-                      <input id="password" type="password" placeholder="Password">
+                      <label for="fanpower">输入功率 P(W)</label>
+                      <input id="fanpower" type="text" placeholder="Password">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="email">风机转速 n(RPM)</label>
-                      <input id="email" type="email" placeholder="Email Address">
+                      <label for="fanrpm">风机转速 n(RPM)</label>
+                      <input id="fanrpm" type="text" placeholder="Email Address">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="foo">输入电压 U(V)</label>
-                      <input id="foo" type="text" placeholder="Enter something here...">
+                      <label for="fanvoltage">输入电压 U(V)</label>
+                      <input id="fanvoltage" type="text" placeholder="Enter something here...">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="foo">输入电流 I(A)</label>
-                      <input id="foo" type="text" placeholder="Enter something here...">
+                      <label for="fancurrent">输入电流 I(A)</label>
+                      <input id="fancurrent" type="text" placeholder="Enter something here...">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="foo">风机静压 Ps(Pa)</label>
-                      <input id="foo" type="text" placeholder="Enter something here...">
+                      <label for="fanps">风机静压 Ps(Pa)</label>
+                      <input id="fanps" type="text" placeholder="Enter something here...">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="foo">风机流量 Q(m3/h)</label>
-                      <input id="foo" type="text" placeholder="Enter something here...">
+                      <label for="fanq">风机流量 Q(m3/h)</label>
+                      <input id="fanq" type="text" placeholder="Enter something here...">
                   </div>
 
                   <div class="pure-control-group">
-                      <label for="foo">风叶长度 Rf(m)</label>
-                      <input id="foo" type="text" placeholder="Enter something here...">
+                      <label for="fanr">风叶长度 Rf(m)</label>
+                      <input id="fanr" type="text" placeholder="Enter something here...">
                   </div>
 
                   <div class="pure-controls">
-                      <button type="submit" class="pure-button pure-button-primary">保存</button>
+                    <button type="button" class="pure-button pure-button-primary" id="save-button">保存</button>
+                    <button type="button" class="pure-button button-success" id="open-button">读取</button>
+                    <span class="demo-response" id="config-file-status"></span>
                   </div>
               </fieldset>
           </form>

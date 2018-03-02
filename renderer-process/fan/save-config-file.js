@@ -3,6 +3,8 @@ const ipc = require('electron').ipcRenderer
 const saveBtn = document.getElementById('save-button')
 
 saveBtn.addEventListener('click', function (event) {
+
+
   ipc.send('save-config-file')
 })
 

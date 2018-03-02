@@ -21,7 +21,7 @@
           <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
         <div class="demo-box">
-          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
+          <p>喷嘴采用喇叭形喷嘴定义</p>
 
           <img src="assets/img/Fig4A-Nozzles.png" alt="" width="500px">
 
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="demo">
+    <div class="demo" id="nozzle-setup">
 
       <div class="demo-wrapper">
 
@@ -49,36 +49,38 @@
         <div class="demo-box">
           <form class="pure-form">
             <fieldset>
-              <legend>喷嘴直径D(mm)定义</legend>
+              <legend>喷嘴口径L(mm)定义</legend>
               <label for="nozzle">
-                N1 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N1 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N1">
               </label>
               <label for="nozzle">
-                N2 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N2 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N2">
               </label>
               <label for="nozzle">
-                N3 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
-              </label>
-              <br><br>
-              <label for="nozzle">
-                N4 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
-              </label>
-              <label for="nozzle">
-                N5 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
-              </label>
-              <label for="nozzle">
-                N6 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N3 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N3">
               </label>
               <br><br>
               <label for="nozzle">
-                N7 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N4 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N4">
               </label>
               <label for="nozzle">
-                N8 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N5 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N5">
               </label>
               <label for="nozzle">
-                N9 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)">
+                N6 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N6">
               </label>
+              <br><br>
+              <label for="nozzle">
+                N7 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N7">
+              </label>
+              <label for="nozzle">
+                N8 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N8">
+              </label>
+              <label for="nozzle">
+                N9 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="N9">
+              </label>
+              <br>
+              <span>喷嘴设定：{{ N1 }}</span>
               <br><br>
               <button type="button" class="pure-button pure-button-primary" id="save-button">保存</button>
               <button type="button" class="pure-button button-success" id="open-button">读取</button>
@@ -93,6 +95,23 @@
     <script type="text/javascript">
       require('./renderer-process/fan/open-config-file')
       require('./renderer-process/fan/save-config-file')
+    </script>
+
+    <script>
+      var nozzle = new Vue({
+        el: '#nozzle-setup',
+        data: {
+          N1: 0,
+          N2: 0,
+          N3: 0,
+          N4: 0,
+          N5: 0,
+          N6: 0,
+          N7: 0,
+          N8: 0,
+          N9: 0,
+        }
+      })
     </script>
 
   </section>

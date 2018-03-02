@@ -20,11 +20,8 @@
           <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
         </button>
         <div class="demo-box">
-          <div class="demo-controls">
-            <button class="demo-button" id="new-window">设置为该模式</button>
-          </div>
 
-          <h5>进气风扇PQ特性测试 - 采用出气风室设定</h5>
+          <h3>进气风扇PQ特性测试 - 采用出气风室设定</h3>
           <p>Fig12出气风室设置用于检测进气风机的PQ曲线</p>
           <img src="assets/img/Fig12-Outlet-Chamber-Setup.png" alt="" width="500px">
 
@@ -54,11 +51,8 @@
           <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
         </button>
         <div class="demo-box">
-          <div class="demo-controls">
-            <button class="demo-button" id="new-window">设置为该模式</button>
-          </div>
 
-          <h5>排气风扇PQ特性测试 - 采用进气风室设定</h5>
+          <h3>排气风扇PQ特性测试 - 采用进气风室设定</h3>
           <p>Fig15进气风室设置用于检测排气风机的PQ曲线</p>
           <img src="assets/img/Fig15-Inlet-Chamber-Setup.png" alt="" width="550px">
 
@@ -72,10 +66,20 @@
             <li>代替总压力管，可以使用测压环来测量平面8处的静压。如果使用这种交替布置，并且所计算的平面8速度大于400fpm，则计算出的平面8速度压力应添加到测量的静态压力。</li>
           </ul>
 
-
           <h5>计算公式</h5>
           <img src="assets/img/Fig15-Inlet-Chamber-Equation.png" alt="" width="550px">
 
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper"  id="mode-setup">
+        <div class="demo-controls">
+          <button class="demo-button" id="inlet-fan-setup" v-on:click="inletFanSetup">{{ mode === 0 ? '已设定进气风扇模式' : '设置为进气风扇模式' }}</button>
+        </div>
+        <div class="demo-controls">
+          <button class="demo-button" id="outlet-fan-setup" v-on:click="outletFanSetup">{{ mode === 1 ? '已设定排气风扇模式' : '设置为排气风扇模式'}}</button>
         </div>
       </div>
     </div>
@@ -86,6 +90,22 @@
       require('./renderer-process/windows/manage-window')
       require('./renderer-process/windows/using-window-events')
       require('./renderer-process/windows/frameless-window')
+    </script>
+    <script>
+      var mode = new Vue({
+        el: '#mode-setup',
+        data: {
+          mode: 0,
+        },
+        methods: {
+          inletFanSetup: function(event) {
+            this.mode = 0
+          },
+          outletFanSetup: function(event) {
+            this.mode = 1
+          }
+        }
+      })
     </script>
 
   </section>

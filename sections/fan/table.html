@@ -53,46 +53,57 @@
         </table>
 
         <br><br>
-        <form class="pure-form">
+        <form class="pure-form" id='add-record'>
+          <fieldset>
+            <legend>测试组#{{ id }}：喷嘴选择 </legend>
 
-            <fieldset>
-              <legend>测试组#1：喷嘴选择 </legend>
+            <label> N1 <input type="checkbox" value='N1' v-model='nozzles'></label>&nbsp;
+            <label> N2 <input type="checkbox" value='N2' v-model='nozzles'></label>&nbsp;
+            <label> N3 <input type="checkbox" value='N3' v-model='nozzles'></label>&nbsp;
+            <label> N4 <input type="checkbox" value='N4' v-model='nozzles'></label>&nbsp;
+            <label> N5 <input type="checkbox" value='N5' v-model='nozzles'></label>&nbsp;
+            <label> N6 <input type="checkbox" value='N6' v-model='nozzles'></label>&nbsp;
+            <label> N7 <input type="checkbox" value='N7' v-model='nozzles'></label>&nbsp;
+            <label> N8 <input type="checkbox" value='N8' v-model='nozzles'></label>&nbsp;
+            <label> N9 <input type="checkbox" value='N9' v-model='nozzles'></label>&nbsp;
 
-              <label> N1 <input type="checkbox" value='1'></label>&nbsp;
-              <label> N2 <input type="checkbox" value='2'></label>&nbsp;
-              <label> N3 <input type="checkbox" value='3'></label>&nbsp;
-              <label> N4 <input type="checkbox" value='4'></label>&nbsp;
-              <label> N5 <input type="checkbox" value='5'></label>&nbsp;
-              <label> N6 <input type="checkbox" value='6'></label>&nbsp;
-              <label> N7 <input type="checkbox" value='7'></label>&nbsp;
-              <label> N8 <input type="checkbox" value='8'></label>&nbsp;
-              <label> N9 <input type="checkbox" value='9'></label>&nbsp;
+            <br>
+            <span>已选择喷嘴：{{ nozzles }}</span>
 
-              <br><br>
+            <br><br>
 
-              <legend>测试组#1：风机静压和喷嘴压差 </legend>
-              <label for="name">Ps</label>
-              <input id="name" type="text" placeholder="Username">
+            <legend>测试组#{{ id }}：风机静压和喷嘴压差 </legend>
+            <label for="Ps">Ps</label>
+            <input id="Ps" type="text" placeholder="风机静压">
 
-              <label for="password">ΔP</label>
-              <input id="password" type="text" placeholder="Password">
+            <label for="dP">ΔP</label>
+            <input id="dP" type="text" placeholder="喷嘴压差">
 
-              <button class="pure-button pure-button-primary">添加</button>
-            </fieldset>
+            <button class="pure-button pure-button-primary">添加</button>
+          </fieldset>
         </form>
 
       </div>
     </div>
 
-    
-
-    
 
     <script type="text/javascript">
       require('./renderer-process/windows/create-window')
       require('./renderer-process/windows/manage-window')
       require('./renderer-process/windows/using-window-events')
       require('./renderer-process/windows/frameless-window')
+    </script>
+
+    <script>
+      var record = new Vue({
+        el: '#add-record',
+        data: {
+          id: 1,
+          nozzles: [],
+          Ps: 0,
+          dP: 0
+        }
+      })
     </script>
 
   </section>

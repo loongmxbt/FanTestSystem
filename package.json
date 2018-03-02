@@ -48,6 +48,7 @@
     "standard": "^8.2.0"
   },
   "dependencies": {
+    "chart.js": "^2.7.2",
     "electron-settings": "^3.0.7",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^7.1.0",

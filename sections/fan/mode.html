@@ -16,7 +16,7 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">进气风扇测试模式
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">进气风扇测试模式介绍
           <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
         </button>
         <div class="demo-box">
@@ -47,7 +47,7 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">排气风扇测试模式
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">排气风扇测试模式介绍
           <div class="demo-meta u-avoid-clicks">支持轴流式和离心式进气风扇</div>
         </button>
         <div class="demo-box">
@@ -75,12 +75,11 @@
 
     <div class="demo">
       <div class="demo-wrapper"  id="mode-setup">
-        <div class="demo-controls">
-          <button class="demo-button" id="inlet-fan-setup" v-on:click="inletFanSetup">{{ mode === 0 ? '已设定进气风扇模式' : '设置为进气风扇模式' }}</button>
-        </div>
-        <div class="demo-controls">
-          <button class="demo-button" id="outlet-fan-setup" v-on:click="outletFanSetup">{{ mode === 1 ? '已设定排气风扇模式' : '设置为排气风扇模式'}}</button>
-        </div>
+        
+          <button v-bind:class="[mode === 0 ? successClass : '', defaultClass]" id="inlet-fan-setup" v-on:click="inletFanSetup">{{ mode === 0 ? '已设定进气风扇模式' : '设置为进气风扇模式' }}</button>
+
+          <button v-bind:class="[mode === 1 ? successClass : '', defaultClass]" id="outlet-fan-setup" v-on:click="outletFanSetup">{{ mode === 1 ? '已设定排气风扇模式' : '设置为排气风扇模式'}}</button>
+        
       </div>
     </div>
 
@@ -96,6 +95,8 @@
         el: '#mode-setup',
         data: {
           mode: 0,
+          defaultClass: 'pure-button',
+          successClass: 'button-success'
         },
         methods: {
           inletFanSetup: function(event) {

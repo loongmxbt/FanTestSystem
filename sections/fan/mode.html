@@ -86,28 +86,9 @@
 
     <script type="text/javascript">
       require('./renderer-process/fan/open-pdf-file')
-      require('./renderer-process/windows/manage-window')
-      require('./renderer-process/windows/using-window-events')
-      require('./renderer-process/windows/frameless-window')
+      require('./renderer-process/fan/mode-setup')
     </script>
-    <script>
-      var mode = new Vue({
-        el: '#mode-setup',
-        data: {
-          mode: 0,
-          defaultClass: 'pure-button',
-          successClass: 'button-success'
-        },
-        methods: {
-          inletFanSetup: function(event) {
-            this.mode = 0
-          },
-          outletFanSetup: function(event) {
-            this.mode = 1
-          }
-        }
-      })
-    </script>
+
 
   </section>
 </template>

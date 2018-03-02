@@ -19,20 +19,7 @@
   <link rel="stylesheet" href="assets/css/github.css">
   <!-- import html -->
   <link rel="import" href="sections/about.html">
-  <link rel="import" href="sections/windows/windows.html">
-  <link rel="import" href="sections/windows/crash-hang.html">
-  <link rel="import" href="sections/menus/menus.html">
-  <link rel="import" href="sections/menus/shortcuts.html">
-  <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
-  <link rel="import" href="sections/native-ui/notifications.html">
-  <link rel="import" href="sections/native-ui/dialogs.html">
-  <link rel="import" href="sections/native-ui/tray.html">
-  <link rel="import" href="sections/communication/ipc.html">
-  <link rel="import" href="sections/system/app-sys-information.html">
-  <link rel="import" href="sections/system/clipboard.html">
-  <link rel="import" href="sections/system/protocol-handler.html">
-  <link rel="import" href="sections/media/pdf.html">
-  <link rel="import" href="sections/media/desktop-capturer.html">
+
   <!-- fan section -->
   <link rel="import" href="sections/fan/mode.html">
   <link rel="import" href="sections/fan/nozzle.html">
@@ -64,14 +51,6 @@
       <button type="button" id="button-report" data-section="report" class="nav-button">测试报告导出</button>
     </div>
 
-    <div class="nav-item u-category-windows">
-      <h5 class="nav-category">
-        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
-        Windows
-      </h5>
-      <button type="button" id="button-windows" data-section="windows" class="nav-button">Create and manage <em>windows</em></button>
-      <button type="button" id="button-crash-hang" data-section="crash-hang" class="nav-button">Handling window <em>crashes and hangs</em></button>
-    </div>
 
 
     <footer class="nav-footer">
@@ -92,6 +71,7 @@
     require('./assets/code-blocks')
     require('./assets/normalize-shortcuts')
   </script>
+
 
   <!-- <script>window.$ = window.jQuery = require('jquery');</script> -->
 </body>

@@ -14,7 +14,7 @@
       </div>
     </header>
 
-    <div class="demo">
+    <div class="demo" id="fands-setup">
       <div class="demo-wrapper">
         <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">风机参数设定
           <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
@@ -24,12 +24,12 @@
               <fieldset>
                   <div class="pure-control-group">
                       <label for="fantype">风机型号 Type</label>
-                      <input id="fantype" type="text" v-model.number="ds.Type" placeholder="">
+                      <input id="fantype" type="text" v-model.number="fands.Type">
                   </div>
 
                   <div class="pure-control-group">
                       <label for="fanpower">输入功率 P(W)</label>
-                      <input id="fanpower" type="text" v-model.number="ds.Pe" placeholder="">
+                      <input id="fanpower" type="text" v-model.number="fands.Pe" placeholder="">
                   </div>
 
                   <div class="pure-control-group">

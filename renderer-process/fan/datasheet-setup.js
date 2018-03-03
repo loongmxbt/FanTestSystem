@@ -2,10 +2,10 @@ const Store = require('electron-store')
 const config = new Store()
 
 var vm_datasheet = new Vue({
-    el: '#nozzle-setup',
+    el: '#fands-setup',
     data: {
       fands: {
-        Type: '',
+        Type: 'G-315A',
         Pe: 0,
         RPM: 0,
         Un: 0,

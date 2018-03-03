@@ -1,3 +1,6 @@
+// Load Devtool (Banned by GFW)
+// const { default: installExtension, VUEJS_DEVTOOLS } = require('electron-devtools-installer');
+
 const path = require('path')
 const glob = require('glob')
 const {app, BrowserWindow} = require('electron')
@@ -5,7 +8,7 @@ const autoUpdater = require('./auto-updater')
 
 const debug = /--debug/.test(process.argv[2])
 
-if (process.mas) app.setName('Electron APIs')
+if (process.mas) app.setName('Fan Test System')
 
 let mainWindow = null
 
@@ -19,7 +22,7 @@ function initialize () {
     const windowOptions = {
       width: 1080,
       minWidth: 680,
-      height: 640,
+      height: 680,
       title: app.getName()
     }
 
@@ -85,6 +88,13 @@ function loadDemos () {
   autoUpdater.updateMenu()
 }
 
+// Load DevTools (Banned by GFW)
+function loadDevTools () {
+  installExtension(VUEJS_DEVTOOLS)
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
+}
+
 // Handle Squirrel on Windows startup events
 switch (process.argv[1]) {
   case '--squirrel-install':
@@ -99,4 +109,7 @@ switch (process.argv[1]) {
     break
   default:
     initialize()
+    // loadDevTools()
 }
+
+

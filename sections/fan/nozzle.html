@@ -18,7 +18,7 @@
 
       <div class="demo-wrapper">
         <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">喷嘴说明
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
         </button>
         <div class="demo-box">
           <p>喷嘴采用喇叭形喷嘴定义</p>
@@ -40,7 +40,6 @@
     </div>
 
     <div class="demo" id="nozzle-setup">
-
       <div class="demo-wrapper">
 
         <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">喷嘴口径定义
@@ -80,7 +79,7 @@
                 N9 <input type="number" class="pure-input-1-4" placeholder="直径 (mm)" v-model.number="nozzleD.N9">
               </label>
               <br>
-              <span>喷嘴设定：N1:{{nozzleD.N1}}mm N2:{{nozzleD.N2}}mm N3:{{nozzleD.N3}}mm</span>
+              <span>喷嘴设定：N1:{{nozzleD.N1}}mm </span>
               <br><br>
               <button type="button" class="pure-button pure-button-primary" v-on:click="save_config">保存</button>
               <button type="button" class="pure-button button-success" v-on:click="load_config">读取</button>
@@ -93,6 +92,7 @@
 
     <script type="text/javascript">
       require('./renderer-process/fan/nozzle-setup')
+
     </script>
 
   </section>

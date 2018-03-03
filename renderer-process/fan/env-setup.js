@@ -9,6 +9,7 @@ var vm_env = new Vue({
         RH: 50,
         ATM: 101325,
         Density: 1.2,
+        Nian: 1.45,
       }
     },
     methods: {

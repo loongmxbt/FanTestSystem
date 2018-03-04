@@ -14,7 +14,7 @@
       </div>
     </header>
 
-    <div class="demo">
+    <div class="demo" id="table_setup">
       <div class="demo-wrapper">
         <table class="pure-table pure-table-bordered">
             <thead>
@@ -33,6 +33,23 @@
             </thead>
 
             <tbody>
+              <tr v-for="(rec, index) in records">
+                <td>{{index}}</td>
+                <td>{{rec.nozzles}}</td>
+                <td>{{rec.Ps}}</td>
+                <td>{{rec.dP}}</td>
+                <td>{{rec.V}}</td>
+                <td>{{rec.Q}}</td>
+                <td>{{rec.U}}</td>
+                <td>{{rec.I}}</td>
+                <td>{{rec.n}}</td>
+                <td>
+                  <a href="" class="pure-button button-xsmall button-secondary">编</a>
+                  <a href="" class="pure-button button-xsmall button-error">删</a>
+                </td>
+              </tr>
+
+
               <tr>
                 <td>1</td>
                 <td>N1</td>
@@ -53,31 +70,31 @@
         </table>
 
         <br><br>
-        <form class="pure-form" id='add-record'>
+        <form class="pure-form">
           <fieldset>
-            <legend>测试组#{{ id }}：喷嘴选择 </legend>
+            <legend>测试组#{{ rec.id }}：喷嘴选择 </legend>
 
-            <label> N1 <input type="checkbox" value='N1' v-model='nozzles'></label>&nbsp;
-            <label> N2 <input type="checkbox" value='N2' v-model='nozzles'></label>&nbsp;
-            <label> N3 <input type="checkbox" value='N3' v-model='nozzles'></label>&nbsp;
-            <label> N4 <input type="checkbox" value='N4' v-model='nozzles'></label>&nbsp;
-            <label> N5 <input type="checkbox" value='N5' v-model='nozzles'></label>&nbsp;
-            <label> N6 <input type="checkbox" value='N6' v-model='nozzles'></label>&nbsp;
-            <label> N7 <input type="checkbox" value='N7' v-model='nozzles'></label>&nbsp;
-            <label> N8 <input type="checkbox" value='N8' v-model='nozzles'></label>&nbsp;
-            <label> N9 <input type="checkbox" value='N9' v-model='nozzles'></label>&nbsp;
+            <label> N1 <input type="checkbox" value='N1' v-model='rec.nozzles'></label>&nbsp;
+            <label> N2 <input type="checkbox" value='N2' v-model='rec.nozzles'></label>&nbsp;
+            <label> N3 <input type="checkbox" value='N3' v-model='rec.nozzles'></label>&nbsp;
+            <label> N4 <input type="checkbox" value='N4' v-model='rec.nozzles'></label>&nbsp;
+            <label> N5 <input type="checkbox" value='N5' v-model='rec.nozzles'></label>&nbsp;
+            <label> N6 <input type="checkbox" value='N6' v-model='rec.nozzles'></label>&nbsp;
+            <label> N7 <input type="checkbox" value='N7' v-model='rec.nozzles'></label>&nbsp;
+            <label> N8 <input type="checkbox" value='N8' v-model='rec.nozzles'></label>&nbsp;
+            <label> N9 <input type="checkbox" value='N9' v-model='rec.nozzles'></label>&nbsp;
 
             <br>
-            <span>已选择喷嘴：{{ nozzles }}</span>
+            <span>已选择喷嘴：{{ rec.nozzles }}</span>
 
             <br><br>
 
-            <legend>测试组#{{ id }}：风机静压和喷嘴压差 </legend>
+            <legend>测试组#{{ rec.id }}：风机静压和喷嘴压差 </legend>
             <label for="Ps">Ps</label>
-            <input id="Ps" type="text" placeholder="风机静压">
+            <input id="Ps" type="text" placeholder="风机静压" v-model.number="rec.Ps">
 
             <label for="dP">ΔP</label>
-            <input id="dP" type="text" placeholder="喷嘴压差">
+            <input id="dP" type="text" placeholder="喷嘴压差" v-model.number="rec.dP">
 
             <button class="pure-button pure-button-primary">添加</button>
           </fieldset>

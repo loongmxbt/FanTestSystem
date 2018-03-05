@@ -96,7 +96,7 @@
             <label for="dP">ΔP</label>
             <input id="dP" type="text" placeholder="喷嘴压差" v-model.number="rec.dP">
 
-            <button class="pure-button pure-button-primary">添加</button>
+            <button type="button" class="pure-button pure-button-primary" v-on:click="add_record">添加</button>
           </fieldset>
         </form>
 

@@ -27,6 +27,9 @@
   <link rel="import" href="sections/fan/datasheet.html">
   <link rel="import" href="sections/fan/table.html">
   <link rel="import" href="sections/fan/report.html">
+
+  <!-- help section -->
+  <link rel="import" href="sections/help/pressure.html">
   
   <script src="./assets/vue.js"></script>
 </head>
@@ -49,6 +52,17 @@
       <button type="button" id="button-datasheet" data-section="datasheet" class="nav-button">风机参数设定</button>
       <button type="button" id="button-table" data-section="table" class="nav-button">测试数据表格</button>
       <button type="button" id="button-report" data-section="report" class="nav-button">测试报告导出</button>
+    </div>
+
+    <div class="nav-item u-category-help">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+        帮助手册
+      </h5>
+      <button type="button" id="button-pressure" data-section="pressure" class="nav-button">压力原理及说明</button>
+      <button type="button" id="button-pitot-tube" data-section="pitot-tube" class="nav-button">皮托风速管说明</button>
+      <button type="button" id="button-software" data-section="software" class="nav-button">本软件使用说明</button>
+
     </div>
 
 

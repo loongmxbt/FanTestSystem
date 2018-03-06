@@ -35,7 +35,7 @@
             <tbody>
               <tr v-for="(rec, index) in records">
                 <td>{{index}}</td>
-                <td>{{rec.nozzles}}</td>
+                <td>{{rec.nozzleId}}</td>
                 <td>{{rec.Ps}}</td>
                 <td>{{rec.dP}}</td>
                 <td>{{rec.V}}</td>
@@ -44,7 +44,7 @@
                 <td>{{rec.I}}</td>
                 <td>{{rec.n}}</td>
                 <td>
-                  <a href="" class="pure-button button-xsmall button-secondary">编</a>
+                  <a href="" class="pure-button button-xsmall button-secondary" v-on:click="edit_record(index)">编</a>
                   <a href="" class="pure-button button-xsmall button-error">删</a>
                 </td>
               </tr>
@@ -74,18 +74,18 @@
           <fieldset>
             <legend>测试组#{{ rec.id }}：喷嘴选择 </legend>
 
-            <label> N1 <input type="checkbox" value='N1' v-model='rec.nozzles'></label>&nbsp;
-            <label> N2 <input type="checkbox" value='N2' v-model='rec.nozzles'></label>&nbsp;
-            <label> N3 <input type="checkbox" value='N3' v-model='rec.nozzles'></label>&nbsp;
-            <label> N4 <input type="checkbox" value='N4' v-model='rec.nozzles'></label>&nbsp;
-            <label> N5 <input type="checkbox" value='N5' v-model='rec.nozzles'></label>&nbsp;
-            <label> N6 <input type="checkbox" value='N6' v-model='rec.nozzles'></label>&nbsp;
-            <label> N7 <input type="checkbox" value='N7' v-model='rec.nozzles'></label>&nbsp;
-            <label> N8 <input type="checkbox" value='N8' v-model='rec.nozzles'></label>&nbsp;
-            <label> N9 <input type="checkbox" value='N9' v-model='rec.nozzles'></label>&nbsp;
+            <label> N1 <input type="checkbox" value=1 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N2 <input type="checkbox" value=2 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N3 <input type="checkbox" value=3 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N4 <input type="checkbox" value=4 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N5 <input type="checkbox" value=5 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N6 <input type="checkbox" value=6 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N7 <input type="checkbox" value=7 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N8 <input type="checkbox" value=8 v-model='rec.nozzleId'></label>&nbsp;
+            <label> N9 <input type="checkbox" value=9 v-model='rec.nozzleId'></label>&nbsp;
 
             <br>
-            <span>已选择喷嘴：{{ rec.nozzles }}</span>
+            <span>已选择喷嘴：{{ rec.nozzleId }}</span>
 
             <br><br>
 

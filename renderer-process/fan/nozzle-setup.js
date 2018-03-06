@@ -20,12 +20,12 @@ var vm_nozzle = new Vue({
     methods: {
       save_config: function(event) {
         console.log('Press save config!')
-        config.set('nozzle', this.nozzleD)
+        config.set('nozzleD', this.nozzleD)
         console.log('Success save config!')
       },
       load_config: function(event) {
         console.log('Press load config!')
-        this.nozzleD = config.get('nozzle')
+        this.nozzleD = config.get('nozzleD')
         console.log('Success load config!')
       }
     }

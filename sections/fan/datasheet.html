@@ -8,7 +8,7 @@
         </h1>
         <h3>此处设定风机手册参数，包括电压、电流、风量、静压等</h3>
 
-        <p>请设定喷嘴的直径信息</p>
+        <p>通过风机数据手册初始信息自动设置PQ测试范围。</p>
 
         <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
       </div>
@@ -16,60 +16,54 @@
 
     <div class="demo" id="fands-setup">
       <div class="demo-wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">风机参数设定
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
-        </button>
-        <div class="demo-box">
-          <form class="pure-form pure-form-aligned">
-              <fieldset>
-                  <div class="pure-control-group">
-                      <label for="fantype">风机型号 Type</label>
-                      <input id="fantype" type="text" v-model.number="fands.Type">
-                  </div>
+        <form class="pure-form pure-form-aligned">
+          <fieldset>
+              <div class="pure-control-group">
+                  <label for="fantype">风机型号 Type</label>
+                  <input id="fantype" type="text" v-model.number="fands.Type">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanpower">输入功率 P(W)</label>
-                      <input id="fanpower" type="text" v-model.number="fands.Pe" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanpower">输入功率 P(W)</label>
+                  <input id="fanpower" type="text" v-model.number="fands.Pe" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanrpm">风机转速 n(RPM)</label>
-                      <input id="fanrpm" type="text" v-model.number="fands.RPM" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanrpm">风机转速 n(RPM)</label>
+                  <input id="fanrpm" type="text" v-model.number="fands.RPM" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanvoltage">输入电压 U(V)</label>
-                      <input id="fanvoltage" type="text" v-model.number="fands.Un" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanvoltage">输入电压 U(V)</label>
+                  <input id="fanvoltage" type="text" v-model.number="fands.Un" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fancurrent">输入电流 I(A)</label>
-                      <input id="fancurrent" type="text" v-model.number="fands.In" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fancurrent">输入电流 I(A)</label>
+                  <input id="fancurrent" type="text" v-model.number="fands.In" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanps">风机静压 Ps(Pa)</label>
-                      <input id="fanps" type="text" v-model.number="fands.Ps" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanps">风机静压 Ps(Pa)</label>
+                  <input id="fanps" type="text" v-model.number="fands.Ps" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanq">风机流量 Q(m3/h)</label>
-                      <input id="fanq" type="text" v-model.number="fands.Q" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanq">风机流量 Q(m3/h)</label>
+                  <input id="fanq" type="text" v-model.number="fands.Q" placeholder="">
+              </div>
 
-                  <div class="pure-control-group">
-                      <label for="fanr">风叶长度 Rf(m)</label>
-                      <input id="fanr" type="text" v-model.number="fands.Rf" placeholder="">
-                  </div>
+              <div class="pure-control-group">
+                  <label for="fanr">风叶长度 Rf(m)</label>
+                  <input id="fanr" type="text" v-model.number="fands.Rf" placeholder="">
+              </div>
 
-                  <div class="pure-controls">
-                    <button type="button" class="pure-button pure-button-primary" v-on:click="save_config">保存</button>
-                    <button type="button" class="pure-button button-success" v-on:click="load_config">读取</button>
-                  </div>
-              </fieldset>
-          </form>
-
-        </div>
+              <div class="pure-controls">
+                <button type="button" class="pure-button pure-button-primary" v-on:click="save_config">保存</button>
+                <button type="button" class="pure-button button-success" v-on:click="load_config">读取</button>
+              </div>
+          </fieldset>
+        </form>
       </div>
     </div>
 

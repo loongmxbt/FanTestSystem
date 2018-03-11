@@ -8,9 +8,7 @@
         </h1>
         <h3>本 <code>风机空气动力学性能测试系统</code> 根据 AMCA-210-07 Fig12 和 Fig15 设定，拥有进气测试模式和出气测试模式。</h3>
 
-        <p>请设定喷嘴的直径信息</p>
-
-        <p>详细信息请查看 <a href="http://electron.atom.io/docs/api/browser-window">《AMCA-210-07》<span class="u-visible-to-screen-reader">(opens in new window)</span></a> 标准规范。</p>
+        <p>根据测试数据表格导出测试报告。测试报告包括以下内容：1）压力流量数据表格；2）压差流量计算表；3）风机PQ曲线；4）风机测试结论。</p>
       </div>
     </header>
 
@@ -74,9 +72,56 @@
 
         <br><br>
 
+        <table class="pure-table pure-table-bordered">
+            <thead>
+                <tr>
+                  <th width="10%">#</th>
+                  <th width="15%">喷嘴</th>
+                  <th width="15%">喷嘴压差 ΔP(Pa)</th>
+                  <th width="15%">空气流速 V(m/s)</th>
+                  <th width="15%">Reynolds系数</th>
+                  <th width="15%">流量系数Cd</th>
+                  <th width="15%">喷嘴流量 Qn(m<sup>3</sup>/h)</th>
+                </tr>
+              </thead>
+
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>N1</td>
+                <td>30</td>
+                <td>40</td>
+                <td>13</td>
+                <td>400</td>
+                <td>380</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>N1-N2</td>
+                <td>30</td>
+                <td>40</td>
+                <td>13</td>
+                <td>400</td>
+                <td>380</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>N1-N4</td>
+                <td>30</td>
+                <td>40</td>
+                <td>13</td>
+                <td>400</td>
+                <td>380</td>
+              </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+        
         <canvas id="pqChart" width="450" height="300"></canvas>
 
-
+        <button type="button" class="pure-button pure-button-primary" id="print-pdf">导出</button>
+        <span id="pdf-path"></span>
       </div>
     </div>
 
@@ -84,7 +129,7 @@
 
     <script type="text/javascript">
       require('./renderer-process/fan/draw-chart')
-
+      require('./renderer-process/fan/export-pdf')
     </script>
 
 
